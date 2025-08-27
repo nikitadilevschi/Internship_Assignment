@@ -5,10 +5,13 @@ up in the same list.
 Approach:
 1. Read the input file line by line. (No need to load the entire file into memory at once.)
 2. Normalise each line of the file with 'strip()'.(Removes whitespace and newline characters.)
-3. Group words by their sorted letter sequences using a dictionary.
+3. Added functionality to get the input file by giving the file name as a command line argument or by default use sample.txt.
+4. Enhanced the program to handle errors gracefully, such as file not found, no permission or empty file.
+5. Group words by their sorted letter sequences using a dictionary.
     - For each word, sort its letters to create a key.
     - Append the original word to the list corresponding to that key in the dictionary.
-4. Print each group of anagrams as a space-separated string.
+6. Print each group of anagrams as a space-separated string.
+7. Create an sample_output.txt file with the expected output. The name of the output file can is based on the input file name.
 
 Maintability:
 - The code is structured in a way that makes it easy to understand and modify. (clear variable names)
@@ -35,4 +38,3 @@ B) ~100 billion words:
 Future Improvements:
 - Configurable normalisation: Add an option to toggle case sensitivity.
 - Output sorting options: Allow sorting of anagram groups by size or alphabetically.
-- Write results to a file instead of printing to console for large datasets.

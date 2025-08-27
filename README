@@ -1,19 +1,22 @@
 1.HOW TO BUILD
 For the very beggining, I need to create the file, 'sample.txt' in the root directory of the project so then I can
 initialise it in our code.
-After oppening the file in the program, I create a dictionary variable to store the anagrams.
+After oppening the file in the program,  I create a dictionary variable to store the anagrams.
 Then I read the file line by line, and for each line I sort the characters in alphabetical order to create a key.
 For case-sensitive anagrams, I convert the word to lowercase before sorting.
 If the key already exists in the dictionary, I append the original word to the list of anagrams for that key.
 If the key does not exist, I create a new entry in the dictionary with the key and a list containing the original word.
 Finally, I iterate through the dictionary and print out the sorted lists of anagrams that have more than one entry in a
-way that it will look exactly as expected output from the assignment.
+way that it will look exactly as expected output from the assignment. Furthermore, I have added a functionality to create
+an output.txt file with the expected output.
 
 2. HOW TO RUN
 To run the program, make sure you have Python installed on your machine.
 Then, navigate to the directory where the script is located and execute the following command in your terminal or command
  prompt:
-python anagram.py sample.txt - where 'anagram.py' is the name of the script and 'sample.txt' is the name of the text file
-containing the words to be processed.
+python anagram.py  - where 'anagram.py' is the name of the script. It will automatically read the 'sample.txt' file and
+print the anagram groups to the console as well as creating an sample_output.txt file with the expected output.
+Furthermore, you can provide your own input file by passing the file name as a command line argument by using '-f' or
+'--file' flags.
 
 Thank You!
