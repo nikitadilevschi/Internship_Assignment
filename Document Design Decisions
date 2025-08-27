@@ -1,0 +1,38 @@
+Key Idea: Use a dictionary where the key is a canonical representation of a word's letters (e.g., sorted letters)
+and the value is a list of words that share those letters. Words with identical keys are anagrams of each other and end
+up in the same list.
+
+Approach:
+1. Read the input file line by line. (No need to load the entire file into memory at once.)
+2. Normalise each line of the file with 'strip()'.(Removes whitespace and newline characters.)
+3. Group words by their sorted letter sequences using a dictionary.
+    - For each word, sort its letters to create a key.
+    - Append the original word to the list corresponding to that key in the dictionary.
+4. Print each group of anagrams as a space-separated string.
+
+Maintability:
+- The code is structured in a way that makes it easy to understand and modify. (clear variable names)
+- Low cognitve load: No external libraries or complex data structures are used.
+
+Performance:
+- The solution is efficient for typical use cases, as it processes each word in linear time relative to its length.
+- The overall time complexity is O(n * m log m), where n is the number of words and m is the average length of the words.
+- This ensures the algorithm is efficient for typical use cases, balancing performance and simplicity.
+
+Scalability:
+A) Up to ~10 million words:
+- The program is still practical on modern hardware, if words are short (memory is a limiting factor).
+- To reduce CPU usage, can be applied frequency signature (count of each letter) instead of sorting.
+- Stream input - reading the file line by line instead of loading it all into memory at once.
+B) ~100 billion words:
+- A sinhgle machine may struggle with this volume of data. (compute + memory +I/O limitations)
+- Distributed processing (using Hadoop/Spark) would be necessary to handle this scale.
+- Is going to be necessary to reduce group values and write each group as one line after the data is partitioned.
+- Using a powerful storage system (like HDFS/S3) to manage the large dataset efficiently. This would help in handling the
+ I/O operations more effectively.
+- Kafka or similar tools can be used to manage data streams if the input is continuous.
+
+Future Improvements:
+- Configurable normalisation: Add an option to toggle case sensitivity.
+- Output sorting options: Allow sorting of anagram groups by size or alphabetically.
+- Write results to a file instead of printing to console for large datasets.
